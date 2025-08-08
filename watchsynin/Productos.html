@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo1.css">
+    <title>Productos</title>
+</head>
+<body style="background-color: #ACD6FD;">
+<div class="head">
+<nav class="navbar">
+<a href="/watchsynin"><img src="img/Reg.png" alt="Regresar" height="30" width="30" style="margin-top: 15px;"></a>
+<a href="Productos.html" style="margin-top:20px">Productos</a>
+<a href="Soporte.html" style="margin-top:20px">Soporte</a>
+<a href="Sobrenosotros.html" style="margin-top:15px">Sobre nosotros</a>
+<a href="Contactanos.html" style="margin-right: 65%;margin-top: 20px;">Contactanos</a>
+<a href="https://www.instagram.com/watchsynin/"><img src="img/ig.png" width="40px" height="30px" style="margin-top: 15px;"></a>
+<a href="https://www.facebook.com/watchsynin?mibextid=ZbWKwL"><img src="img/fb.png" width="40px" height="30px" style="margin-top: 15px;"></a>
+<a href="https://youtube.com/@Watchsynin?si=i0OmZrIiJ6Fk7OSV"><img src="img/yt.png" width="40px" height="30px" style="margin-top: 15px;"></a>
+<img src="img/logo.png" alt="Watch Synin" style="width: 80px;height: 50px;margin-left: 5%;margin-top:20px;">
+</nav>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="color: black; text-align: center;" >
+Productos
+</h1>
+<br>
+<br>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/1.png" alt="">
+                    </div>
+                    <p class="descripcion">Dispositivo muñeca Watch Synin</p>
+                    <span class="precio">$ 900</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/2.png" alt="">
+                    </div>
+                    <p class="descripcion">Dispositivo localizador Watch Synin</p>
+                    <span class="precio">$ 900</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/3.png" alt="">
+                    </div>
+                    <p class="descripcion">Conjunto completo sistema Watch Synin</p>
+                    <span class="precio">$ 1.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/4.png" alt="">
+                    </div>
+                    <p class="descripcion">Smartwatch Huawei Band 8 1.47</p>
+                    <span class="precio">$ 750</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/5.png" alt="">
+                    </div>
+                    <p class="descripcion" id>Reloj Inteligente Xiaomi Black Shark  </p>
+                    <span class="precio">$ 699</span>
+                </div>
+            </div>
+            <div class="fila">
+            	<div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/6.png" alt="">
+                    </div>
+                    <p class="descripcion">Reloj Xiaomi Smart Band 8 Dorado 
+                    </p>
+                    <span class="precio">$ 750</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/7.png" alt="">
+                    </div>
+                    <p class="descripcion">Smartband Wonderfeng ML13-237</p>
+                    <span class="precio">$ 300</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/8.png" alt="">
+                    </div>
+                    <p class="descripcion">Smartwatch 116 Reloj Inteligente</p>
+                    <span class="precio">$ 130</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/9.png" alt="">
+                    </div>
+                    <p class="descripcion">Reloj Inteligente Smartwatch Deportivo Bluetooth</p>
+                    <span class="precio">$ 700</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/10.png" alt="">
+                    </div>
+                    <p class="descripcion">Reloj Inteligente T900 Ultra </p>
+                    <span class="precio">$ 699</span>
+                </div>
+            </div> 
+        </div>
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="img/1.png" alt="" id="img">
+                <h2 id="modelo"></h2>
+                <p id="descripcion"></p>
+                <span class="precio" id="precio"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    	let mostrador = document.getElementById("mostrador");
+		let seleccion = document.getElementById("seleccion");
+		let imgSeleccionada = document.getElementById("img");
+		let modeloSeleccionado = document.getElementById("modelo");
+		let descripSeleccionada = document.getElementById("descripcion");
+		let precioSeleccionado = document.getElementById("precio");
+		function cargar(item){
+    		quitarBordes();
+    		mostrador.style.width = "70%";
+    		seleccion.style.width = "30%";
+    		seleccion.style.opacity = "1";
+    		item.style.border = "2px solid red";
+
+    		imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
+
+    		modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
+
+    		descripSeleccionada.innerHTML = "Descripción del modelo ";
+
+    		precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
+    	}
+    	function cerrar(){
+    		mostrador.style.width = "100%";
+    		seleccion.style.width = "0%";
+    		seleccion.style.opacity = "0";
+    		quitarBordes();
+    	}
+		function quitarBordes(){
+    		var items = document.getElementsByClassName("item");
+    		for(i=0;i <items.length; i++){
+        		items[i].style.border = "none";
+    		}
+		}
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="TablaProd.html">
+        <button style="height: 50px; width: 100px; background-color: #BDA4F1; border-radius: 8px;">Ir a tabla con todos los datos</button>
+    </a>
+    <br>
+    <br>
+
+</body>
+</html>
